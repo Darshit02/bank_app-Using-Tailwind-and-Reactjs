@@ -1,11 +1,12 @@
 import React from 'react'
+import styles from '../style'
 
-const Button = () => {
+const Button = ({style}) => {
   return (
-    <div>
-      Button
-    </div>
-  )
+    <button type="button" className={`py-4 px-6 bg-blue-gredient font-poppins font-medium text-[18px] text-primary outline-none ${styles}`}>
+      Get Started
+    </button>
+   )
 }
 
 export default Button
