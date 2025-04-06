@@ -37,3 +37,11 @@ jobs:
     #    username : ${{ secrets.DOCKER_USERNAME }}
     #    password : ${{ secrets.DOCKER_PASSWORD }} 
   
+    # - name : Build and push docker Image
+    #   uses : mr-smithers-excellent/docker-build-push@v4
+    #   with:
+    #    image : darshitmistry/test-app
+    #    registry : docker.io
+    #    username : ${{ secrets.DOCKER_USERNAME }}
+    #    password : ${{ secrets.DOCKER_PASSWORD }} 
+  
