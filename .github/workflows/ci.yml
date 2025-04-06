@@ -12,12 +12,11 @@ on:
 jobs:
   build:
 
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
 
     strategy:
       matrix:
         node-version: [18.x, 20.x, 22.x]
-        os: [ubuntu-latest, windows-latest, macos-latest]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
@@ -29,8 +28,12 @@ jobs:
         cache: 'npm'
     - run: npm ci
     - run: npm run build --if-present
-    - run: npm test
-
-  publish : 
-     needs : build
-     runs-on: ubuntu-latestm
+  
+    # # - name : Build and push docker Image
+    #   uses : mr-smithers-excellent/docker-build-push@v4
+    #   with:
+    #    image : darshitmistry/test-app
+    #    registry : docker.io
+    #    username : ${{ secrets.DOCKER_USERNAME }}
+    #    password : ${{ secrets.DOCKER_PASSWORD }} 
+  
